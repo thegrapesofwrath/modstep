@@ -1,0 +1,10 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = main.h modStep.h
+OBJ = main.o modStep.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+modStepAlgorithm: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
